@@ -16,7 +16,7 @@ Thumbs.db
 # Vercel output
 .vercel
 
-# Misc
+# Miscellaneous
 *.zip
 *.tgz
 *.tar
