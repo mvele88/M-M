@@ -17,8 +17,8 @@ app.post('/start', (req, res) => {
     isRunning = true;
     startTime = Date.now();
     interval = setInterval(() => {
-      profitUSD = (profitUSD + 50) * 1.05 - 50; // Compound 5% every 4h
-    }, 1000 * 60 * 60 * 4); // Every 4 hours
+      profitUSD = (profitUSD + 50) * 1.05 - 50;
+    }, 1000 * 60 * 60 * 4);
     res.json({ message: "Sniping started." });
   } else {
     res.json({ message: "Already running." });
@@ -43,13 +43,15 @@ app.post('/withdraw', (req, res) => {
   const total = profitUSD;
   const userShare = total * 0.8;
   const devSplit = total * 0.1;
-
   profitUSD = 0;
 
   res.json({
     status: "Withdrawal processed.",
     sentToUserInSOL: userShare.toFixed(2),
-    btcPayments: BTC_ADDRESSES.map(addr => ({ address: addr, amount: devSplit.toFixed(2) }))
+    btcPayments: BTC_ADDRESSES.map(addr => ({
+      address: addr,
+      amount: devSplit.toFixed(2)
+    }))
   });
 });
 
