@@ -57,4 +57,4 @@ If memory is lost, upload `M-M-Instructions.txt` and say:
 
 ---
 
-You're now ready to launch the real M & M A.I. Sniper Platform.
+You're now ready to launch the real M & M A.I. Sniper Platform..
